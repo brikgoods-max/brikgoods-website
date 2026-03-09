@@ -28,16 +28,16 @@ export default function Navbar() {
     <nav
       className={`sticky top-0 z-50 bg-[#FAF9F6] border-b border-[#e8e5de] transition-shadow duration-300 ${scrolled ? 'nav-scrolled' : ''}`}
     >
-      <div className="max-w-7xl mx-auto px-6 lg:px-10 flex items-center justify-between h-[88px]">
+      <div className="max-w-7xl mx-auto px-6 lg:px-10 flex items-center justify-between h-[108px]">
 
         {/* Logo */}
         <Link href="/" className="flex items-center shrink-0" onClick={() => setMobileOpen(false)}>
           <Image
             src="/images/logo.png"
             alt="BRik Goods"
-            width={220}
-            height={68}
-            className="h-[60px] w-auto object-contain"
+            width={300}
+            height={92}
+            className="h-[80px] w-auto object-contain"
             priority
           />
         </Link>
