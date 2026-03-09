@@ -3,28 +3,22 @@ import Image from 'next/image';
 
 const categories = [
   {
-    name: 'Shoe Storage',
-    count: '20+ Products',
-    image: '/images/catalog/page-1.png',
-    href: '/products?category=Shoe+Storage',
+    name: 'Disposables',
+    count: '80+ Products',
+    image: '/images/products/hr_kangyi-paper-cup-250ml-100pcs-multicolor.jpg',
+    href: '/products?category=Disposables',
   },
   {
-    name: 'Kitchen & Pantry',
-    count: '18+ Products',
-    image: '/images/catalog/page-9.png',
-    href: '/products?category=Kitchen+%26+Pantry',
+    name: 'Home Storage',
+    count: '36+ Products',
+    image: '/images/products/hr_patterned-basket-set-3colors.jpg',
+    href: '/products?category=Home+Storage',
   },
   {
-    name: 'Home Organization',
-    count: '25+ Products',
-    image: '/images/catalog/page-11.png',
-    href: '/products?category=Home+Organization',
-  },
-  {
-    name: 'Bathroom',
-    count: '6+ Products',
-    image: '/images/catalog/page-11.png',
-    href: '/products?category=Bathroom',
+    name: 'Wholesale',
+    count: 'Bulk Pricing',
+    image: '/images/products/hr_kangyi-paper-cup-330ml-100pcs-festive.jpg',
+    href: '/wholesale',
   },
 ];
 
