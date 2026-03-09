@@ -5,6 +5,7 @@ import type { Product } from '@/lib/products';
 import ProductCard from '@/components/ProductCard';
 import { useSearchParams } from 'next/navigation';
 import { Suspense } from 'react';
+import Link from 'next/link';
 
 type SortOption = 'default' | 'name-asc' | 'name-desc';
 
@@ -62,35 +63,44 @@ function ProductsContent() {
   const hasFilters = searchQuery || selectedCategory !== 'All';
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-[#FAF9F6]">
       {/* Page header */}
-      <div className="bg-[#F8F8F6] border-b border-gray-200">
-        <div className="max-w-7xl mx-auto px-6 lg:px-8 py-14">
-          <p className="text-[0.625rem] font-bold tracking-[0.2em] uppercase text-[#2E6B73] mb-3">BRik Goods</p>
-          <h1 className="font-black text-[#1A1A1A] tracking-[-0.03em] leading-tight"
-            style={{ fontSize: 'clamp(2.25rem, 5vw, 3.5rem)' }}>
+      <div className="border-b border-[#e8e5de]" style={{ background: 'rgba(10,10,10,0.97)' }}>
+        <div className="max-w-7xl mx-auto px-6 lg:px-10 py-16">
+          {/* Breadcrumb */}
+          <nav className="flex items-center gap-2 mb-6">
+            <Link href="/" className="luxury-label text-[#5a5a5a] hover:text-[#B8963E] transition-colors">Home</Link>
+            <span className="text-[#3a3a3a]">/</span>
+            <span className="luxury-label text-[#B8963E]">Products</span>
+          </nav>
+
+          <span className="luxury-label text-[#B8963E] block mb-3">BRik Goods Collection</span>
+          <h1
+            className="luxury-heading text-white"
+            style={{ fontSize: 'clamp(2.25rem, 4.5vw, 3.5rem)' }}
+          >
             All Products
           </h1>
-          <p className="text-gray-500 mt-3 text-[1.0625rem]">
+          <p className="text-[#a09890] mt-3 text-[1.0625rem]" style={{ fontFamily: 'var(--font-inter)' }}>
             {loading ? 'Loading…' : (
               <>
-                <span className="text-[#1A1A1A] font-semibold">{products.length}</span> product{products.length !== 1 ? 's' : ''}
-                {selectedCategory !== 'All' && <> in <span className="text-[#1A1A1A] font-semibold">{selectedCategory}</span></>}
-                {searchQuery && <> matching &ldquo;<span className="text-[#1A1A1A] font-semibold">{searchQuery}</span>&rdquo;</>}
+                <span className="text-white font-medium">{products.length}</span> product{products.length !== 1 ? 's' : ''}
+                {selectedCategory !== 'All' && <> in <span className="text-white font-medium">{selectedCategory}</span></>}
+                {searchQuery && <> matching &ldquo;<span className="text-white font-medium">{searchQuery}</span>&rdquo;</>}
               </>
             )}
           </p>
         </div>
       </div>
 
-      <div className="max-w-7xl mx-auto px-6 lg:px-8 py-10">
+      <div className="max-w-7xl mx-auto px-6 lg:px-10 py-12">
         {/* Controls row */}
-        <div className="flex flex-col md:flex-row gap-4 mb-8 items-start md:items-center justify-between">
+        <div className="flex flex-col md:flex-row gap-4 mb-10 items-start md:items-center justify-between">
           {/* Search */}
-          <div className="relative w-full md:w-[340px]">
+          <div className="relative w-full md:w-[320px]">
             <svg
-              className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400 pointer-events-none"
-              width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"
+              className="absolute left-4 top-1/2 -translate-y-1/2 text-[#a09890] pointer-events-none"
+              width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"
             >
               <circle cx="11" cy="11" r="8" />
               <path d="m21 21-4.35-4.35" />
@@ -100,7 +110,7 @@ function ProductsContent() {
               placeholder="Search products…"
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              className="w-full pl-10 pr-4 py-3 border border-gray-200 text-sm placeholder-gray-400 focus:outline-none focus:border-[#2E6B73] transition-colors"
+              className="w-full pl-10 pr-4 py-3 border border-[#e8e5de] bg-white text-sm placeholder-[#a09890] focus:outline-none focus:border-[#B8963E] transition-colors"
             />
           </div>
 
@@ -108,8 +118,8 @@ function ProductsContent() {
           <select
             value={sortBy}
             onChange={(e) => setSortBy(e.target.value as SortOption)}
-            className="border border-gray-200 py-3 px-4 text-sm text-[#1A1A1A] focus:outline-none focus:border-[#2E6B73] transition-colors appearance-none cursor-pointer bg-white pr-8"
-            style={{ backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6' viewBox='0 0 10 6'%3E%3Cpath d='M1 1l4 4 4-4' stroke='%231A1A1A' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E")`, backgroundRepeat: 'no-repeat', backgroundPosition: 'right 12px center' }}
+            className="border border-[#e8e5de] bg-white py-3 px-4 text-sm text-[#0A0A0A] focus:outline-none focus:border-[#B8963E] transition-colors appearance-none cursor-pointer pr-8"
+            style={{ backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6' viewBox='0 0 10 6'%3E%3Cpath d='M1 1l4 4 4-4' stroke='%230A0A0A' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E")`, backgroundRepeat: 'no-repeat', backgroundPosition: 'right 12px center' }}
           >
             <option value="default">Sort: Default</option>
             <option value="name-asc">Name: A → Z</option>
@@ -117,16 +127,16 @@ function ProductsContent() {
           </select>
         </div>
 
-        {/* Category pills */}
-        <div className="flex flex-wrap gap-2 mb-10">
+        {/* Category pills — thin border style */}
+        <div className="flex flex-wrap gap-2 mb-12">
           {categories.map((cat) => (
             <button
               key={cat}
               onClick={() => setSelectedCategory(cat)}
-              className={`px-4 py-1.5 text-[0.6875rem] font-bold tracking-[0.08em] uppercase border transition-all duration-200 ${
+              className={`px-4 py-2 luxury-label border transition-all duration-200 ${
                 selectedCategory === cat
-                  ? 'bg-[#1A1A1A] text-white border-[#1A1A1A]'
-                  : 'bg-white text-gray-500 border-gray-200 hover:border-[#1A1A1A] hover:text-[#1A1A1A]'
+                  ? 'bg-[#0A0A0A] text-white border-[#0A0A0A]'
+                  : 'bg-transparent text-[#6b6560] border-[#d8d5ce] hover:border-[#B8963E] hover:text-[#B8963E]'
               }`}
             >
               {cat}
@@ -136,35 +146,34 @@ function ProductsContent() {
 
         {/* Grid */}
         {loading ? (
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-px bg-gray-100">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {[...Array(6)].map((_, i) => (
-              <div key={i} className="bg-white">
-                <div className="aspect-square bg-[#F8F8F6] animate-pulse" />
-                <div className="p-4 space-y-2">
-                  <div className="h-2 bg-gray-100 rounded w-1/3 animate-pulse" />
-                  <div className="h-4 bg-gray-100 rounded w-3/4 animate-pulse" />
-                  <div className="h-3 bg-gray-100 rounded w-1/2 animate-pulse" />
+              <div key={i} className="bg-white border border-[#e8e5de]">
+                <div className="aspect-square bg-[#FAF9F6] animate-pulse" />
+                <div className="p-5 space-y-2">
+                  <div className="h-2 bg-[#f0ede8] rounded w-1/3 animate-pulse" />
+                  <div className="h-4 bg-[#f0ede8] rounded w-3/4 animate-pulse" />
                 </div>
               </div>
             ))}
           </div>
         ) : products.length === 0 ? (
-          <div className="text-center py-24 border border-gray-100">
-            <p className="text-[#1A1A1A] font-semibold text-lg mb-2">No products found</p>
-            <p className="text-gray-400 text-sm mb-6">
+          <div className="text-center py-28 border border-[#e8e5de]">
+            <p className="luxury-heading text-[#0A0A0A] text-xl mb-3">No products found</p>
+            <p className="text-[#a09890] text-sm mb-8" style={{ fontFamily: 'var(--font-inter)' }}>
               {hasFilters ? 'Try adjusting your search or filters.' : 'No products available.'}
             </p>
             {hasFilters && (
               <button
                 onClick={clearFilters}
-                className="text-[0.75rem] font-bold tracking-[0.1em] uppercase text-[#2E6B73] hover:text-[#245558] transition-colors"
+                className="luxury-label text-[#B8963E] hover:text-[#9e7e2e] transition-colors"
               >
                 Clear all filters
               </button>
             )}
           </div>
         ) : (
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-px bg-gray-100">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {products.map((product) => (
               <ProductCard key={product.id} product={product} />
             ))}
@@ -178,8 +187,8 @@ function ProductsContent() {
 export default function ProductsPage() {
   return (
     <Suspense fallback={
-      <div className="min-h-screen flex items-center justify-center">
-        <p className="text-gray-400 text-sm tracking-widest uppercase">Loading…</p>
+      <div className="min-h-screen flex items-center justify-center bg-[#FAF9F6]">
+        <p className="luxury-label text-[#a09890]">Loading…</p>
       </div>
     }>
       <ProductsContent />

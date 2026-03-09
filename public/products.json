@@ -151,7 +151,7 @@
   },
   {
     "id": "SA0202",
-    "name": "Clear Storage Container \u2014 Small",
+    "name": "Clear Storage Container — Small",
     "category": "Kitchen & Pantry",
     "size": "24*16*16cm",
     "weight": "500g",
@@ -161,7 +161,7 @@
   },
   {
     "id": "SA0203",
-    "name": "Clear Storage Container \u2014 Medium",
+    "name": "Clear Storage Container — Medium",
     "category": "Kitchen & Pantry",
     "size": "27*18*18cm",
     "weight": "615g",
@@ -171,7 +171,7 @@
   },
   {
     "id": "SA0204",
-    "name": "Clear Storage Container \u2014 Large",
+    "name": "Clear Storage Container — Large",
     "category": "Kitchen & Pantry",
     "size": "30*20*20cm",
     "weight": "820g",
@@ -181,7 +181,7 @@
   },
   {
     "id": "SA0205",
-    "name": "Storage Container with Lid Set \u2014 Medium",
+    "name": "Storage Container with Lid Set — Medium",
     "category": "Kitchen & Pantry",
     "size": "27*18*18cm",
     "weight": "1115g",
@@ -191,7 +191,7 @@
   },
   {
     "id": "SA0206",
-    "name": "Storage Container with Lid Set \u2014 Large",
+    "name": "Storage Container with Lid Set — Large",
     "category": "Kitchen & Pantry",
     "size": "30*20*20cm",
     "weight": "1430g",
@@ -201,7 +201,7 @@
   },
   {
     "id": "SA0228",
-    "name": "Slim Desk Organizer Tray \u2014 Mini",
+    "name": "Slim Desk Organizer Tray — Mini",
     "category": "Home Organization",
     "size": "29.8*10*4.8cm",
     "weight": "181g",
@@ -211,7 +211,7 @@
   },
   {
     "id": "SA0229",
-    "name": "Desk Organizer Tray \u2014 Standard",
+    "name": "Desk Organizer Tray — Standard",
     "category": "Home Organization",
     "size": "30*20*5cm",
     "weight": "317g",
@@ -241,7 +241,7 @@
   },
   {
     "id": "SA0236",
-    "name": "Fridge Organizer Bin \u2014 Small",
+    "name": "Fridge Organizer Bin — Small",
     "category": "Kitchen & Pantry",
     "size": "31*10*9.5cm",
     "weight": "242g",
@@ -251,7 +251,7 @@
   },
   {
     "id": "SA0237",
-    "name": "Fridge Organizer Bin \u2014 Medium",
+    "name": "Fridge Organizer Bin — Medium",
     "category": "Kitchen & Pantry",
     "size": "36*14*10cm",
     "weight": "319g",
@@ -261,7 +261,7 @@
   },
   {
     "id": "SA0238",
-    "name": "Fridge Organizer Bin \u2014 Large",
+    "name": "Fridge Organizer Bin — Large",
     "category": "Kitchen & Pantry",
     "size": "32*20.3*9.2cm",
     "weight": "387.5g",
@@ -291,7 +291,7 @@
   },
   {
     "id": "SA0281",
-    "name": "Pull-Out Fridge Drawer \u2014 Small",
+    "name": "Pull-Out Fridge Drawer — Small",
     "category": "Kitchen & Pantry",
     "size": "34.5*13*11.5cm",
     "weight": "780g",
@@ -301,7 +301,7 @@
   },
   {
     "id": "SA0282",
-    "name": "Pull-Out Fridge Drawer \u2014 Large",
+    "name": "Pull-Out Fridge Drawer — Large",
     "category": "Kitchen & Pantry",
     "size": "35*22*11.5cm",
     "weight": "1048g",
@@ -311,7 +311,7 @@
   },
   {
     "id": "SA0242",
-    "name": "Open-Top Storage Bin \u2014 Medium",
+    "name": "Open-Top Storage Bin — Medium",
     "category": "Home Organization",
     "size": "21.8*21.8*16cm",
     "weight": "472g",
@@ -321,7 +321,7 @@
   },
   {
     "id": "SA0243",
-    "name": "Open-Top Storage Bin \u2014 Large",
+    "name": "Open-Top Storage Bin — Large",
     "category": "Home Organization",
     "size": "31.5*29.2*18.3cm",
     "weight": "761g",
@@ -331,7 +331,7 @@
   },
   {
     "id": "SA0244",
-    "name": "Open-Top Storage Bin \u2014 XL",
+    "name": "Open-Top Storage Bin — XL",
     "category": "Home Organization",
     "size": "33.5*25.2*21cm",
     "weight": "957g",
@@ -341,7 +341,7 @@
   },
   {
     "id": "SA0250",
-    "name": "Stackable Drawer Organizer \u2014 Small",
+    "name": "Stackable Drawer Organizer — Small",
     "category": "Home Organization",
     "size": "15*10*6cm",
     "weight": "120g",
@@ -351,7 +351,7 @@
   },
   {
     "id": "SA0251",
-    "name": "Stackable Drawer Organizer \u2014 Medium",
+    "name": "Stackable Drawer Organizer — Medium",
     "category": "Home Organization",
     "size": "20*10*6cm",
     "weight": "150g",
@@ -381,7 +381,7 @@
   },
   {
     "id": "SA0270",
-    "name": "Closet Clothes Hanger \u2014 Standard",
+    "name": "Closet Clothes Hanger — Standard",
     "category": "Clothing Storage",
     "size": "42*23cm",
     "weight": "85g",
@@ -441,7 +441,7 @@
   },
   {
     "id": "SA0310",
-    "name": "Vacuum Storage Bag \u2014 Medium",
+    "name": "Vacuum Storage Bag — Medium",
     "category": "Clothing Storage",
     "size": "60*80cm",
     "weight": "180g",
@@ -451,7 +451,7 @@
   },
   {
     "id": "SA0311",
-    "name": "Vacuum Storage Bag \u2014 Large",
+    "name": "Vacuum Storage Bag — Large",
     "category": "Clothing Storage",
     "size": "80*100cm",
     "weight": "220g",
@@ -471,7 +471,7 @@
   },
   {
     "id": "SA0330",
-    "name": "Stackable Shoe Rack \u2014 2 Tier",
+    "name": "Stackable Shoe Rack — 2 Tier",
     "category": "Shoe Storage",
     "size": "52*22*28cm",
     "weight": "1.2kg",
@@ -481,7 +481,7 @@
   },
   {
     "id": "SA0340",
-    "name": "Hanging Closet Organizer \u2014 6 Shelf",
+    "name": "Hanging Closet Organizer — 6 Shelf",
     "category": "Clothing Storage",
     "size": "30*28*105cm",
     "weight": "450g",
@@ -507,7 +507,7 @@
     "weight": "780g",
     "image": "/images/products/page20_img01.jpeg",
     "price": null,
-    "description": "Adjustable tension pole shower caddy with four shelves. No drilling required \u2014 fits any bathroom."
+    "description": "Adjustable tension pole shower caddy with four shelves. No drilling required — fits any bathroom."
   },
   {
     "id": "SA0370",
@@ -531,7 +531,7 @@
   },
   {
     "id": "SA0390",
-    "name": "Foldable Storage Cube \u2014 Small",
+    "name": "Foldable Storage Cube — Small",
     "category": "Home Organization",
     "size": "30*30*30cm",
     "weight": "290g",
@@ -541,7 +541,7 @@
   },
   {
     "id": "SA0391",
-    "name": "Foldable Storage Cube \u2014 Large",
+    "name": "Foldable Storage Cube — Large",
     "category": "Home Organization",
     "size": "40*40*40cm",
     "weight": "380g",
@@ -571,7 +571,7 @@
   },
   {
     "id": "SA0420",
-    "name": "Pantry Pull-Out Basket \u2014 Small",
+    "name": "Pantry Pull-Out Basket — Small",
     "category": "Kitchen & Pantry",
     "size": "30*15*12cm",
     "weight": "380g",
@@ -581,7 +581,7 @@
   },
   {
     "id": "SA0421",
-    "name": "Pantry Pull-Out Basket \u2014 Large",
+    "name": "Pantry Pull-Out Basket — Large",
     "category": "Kitchen & Pantry",
     "size": "40*22*15cm",
     "weight": "520g",
@@ -611,7 +611,7 @@
   },
   {
     "id": "SA0450",
-    "name": "Garage Storage Bin \u2014 Heavy Duty",
+    "name": "Garage Storage Bin — Heavy Duty",
     "category": "Home Organization",
     "size": "55*35*35cm",
     "weight": "1.5kg",
@@ -651,7 +651,7 @@
   },
   {
     "id": "SA0490",
-    "name": "Multi-Purpose Basket Set \u2014 3pc",
+    "name": "Multi-Purpose Basket Set — 3pc",
     "category": "Home Organization",
     "size": "S/M/L set",
     "weight": "850g",
@@ -688,5 +688,105 @@
     "image": "/images/products/page34_img05.jpeg",
     "price": null,
     "description": "360-degree rotating makeup organizer tower with multiple tiers for full product visibility and access."
+  },
+  {
+    "id": "SA0601",
+    "name": "Fridge Produce Bin — Small Square",
+    "category": "Kitchen & Pantry",
+    "size": "16.5*16.5*14cm",
+    "weight": "280g",
+    "image": "/images/products/page06_img14.png",
+    "price": null,
+    "description": "Compact square fridge bin perfect for small fruits and vegetables. Clear design lets you see contents at a glance. Stackable for efficient refrigerator organization."
+  },
+  {
+    "id": "SA0602",
+    "name": "Fridge Produce Bin — Wide",
+    "category": "Kitchen & Pantry",
+    "size": "25*16*14cm",
+    "weight": "340g",
+    "image": "/images/products/page06_img15.png",
+    "price": null,
+    "description": "Wide fridge bin designed for larger fruits and produce. Non-slip base keeps it stable on refrigerator shelves. Easy-carry handle for convenient removal."
+  },
+  {
+    "id": "SA0603",
+    "name": "Egg Tray Organizer — 24 Eggs",
+    "category": "Kitchen & Pantry",
+    "size": "32*14*7cm",
+    "weight": "380g",
+    "image": "/images/products/page06_img16.jpeg",
+    "price": null,
+    "description": "Clear egg storage tray with lid holds up to 24 eggs. Stackable design maximizes fridge shelf space. Protects eggs and keeps them fresh and organized."
+  },
+  {
+    "id": "SA0604",
+    "name": "Fridge Rectangular Bin — Medium",
+    "category": "Kitchen & Pantry",
+    "size": "30*18*12cm",
+    "weight": "310g",
+    "image": "/images/products/page06_img17.jpeg",
+    "price": null,
+    "description": "Medium rectangular clear bin for fridge or pantry. Ideal for cold cuts, cheeses, and snack items. Pull-out handle for easy access."
+  },
+  {
+    "id": "SA0605",
+    "name": "Fridge Rectangular Bin — Large",
+    "category": "Kitchen & Pantry",
+    "size": "38*22*12cm",
+    "weight": "430g",
+    "image": "/images/products/page06_img18.jpeg",
+    "price": null,
+    "description": "Large rectangular fridge bin for meal prep containers, produce bags, and packaged foods. BPA-free and dishwasher safe."
+  },
+  {
+    "id": "SA0606",
+    "name": "Stacking Can/Bottle Organizer",
+    "category": "Kitchen & Pantry",
+    "size": "35*18*16cm",
+    "weight": "550g",
+    "image": "/images/products/page06_img30.png",
+    "price": null,
+    "description": "Double-layer stacking organizer holds cans and bottles in the fridge. Gravity-fed design brings cans to the front automatically for easy access."
+  },
+  {
+    "id": "SA0607",
+    "name": "Clear Fridge Bin with Handle — Small",
+    "category": "Kitchen & Pantry",
+    "size": "24*16*12cm",
+    "weight": "245g",
+    "image": "/images/products/page06_img12.jpeg",
+    "price": null,
+    "description": "Compact clear bin with integrated handle. Perfect for organizing condiments, small snacks, and fridge items. Fits most refrigerator door shelves and main compartments."
+  },
+  {
+    "id": "SA0702",
+    "name": "Clear Storage Bin with Handles — Medium",
+    "category": "Home Organization",
+    "size": "28*24*18cm",
+    "weight": "620g",
+    "image": "/images/products/page07_img02.jpeg",
+    "price": null,
+    "description": "Medium-sized clear bin with built-in handles for easy transport. Ideal for bathroom toiletries, craft supplies, or pantry staples. Stackable design for space efficiency."
+  },
+  {
+    "id": "SA0704",
+    "name": "Clear Storage Bin with Handles — Compact",
+    "category": "Home Organization",
+    "size": "24*20*14cm",
+    "weight": "390g",
+    "image": "/images/products/page07_img16.png",
+    "price": null,
+    "description": "Compact version of our popular handled storage bin. Great for smaller shelves, drawers, or as a desk organizer. Lightweight yet sturdy."
+  },
+  {
+    "id": "SA0706",
+    "name": "Clear Pantry Storage Bin — XL",
+    "category": "Kitchen & Pantry",
+    "size": "38*30*22cm",
+    "weight": "1050g",
+    "image": "/images/products/page07_img18.jpeg",
+    "price": null,
+    "description": "Extra-large clear pantry bin with reinforced handles. Holds bulk dry goods, snacks, and packaged foods. Stackable for maximum pantry efficiency."
   }
 ]

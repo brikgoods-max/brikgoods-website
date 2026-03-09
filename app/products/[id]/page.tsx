@@ -5,16 +5,13 @@ import { useParams, useRouter } from 'next/navigation';
 import Image from 'next/image';
 import Link from 'next/link';
 import type { Product } from '@/lib/products';
-import { useCart } from '@/lib/cart';
 
 export default function ProductDetailPage() {
   const { id } = useParams<{ id: string }>();
   const router = useRouter();
-  const { addItem } = useCart();
   const [product, setProduct] = useState<Product | null>(null);
   const [related, setRelated] = useState<Product[]>([]);
   const [loading, setLoading] = useState(true);
-  const [addedToCart, setAddedToCart] = useState(false);
   const [addedToInquiry, setAddedToInquiry] = useState(false);
 
   useEffect(() => {
@@ -32,17 +29,9 @@ export default function ProductDetailPage() {
       });
   }, [id, router]);
 
-  const handleAddToCart = () => {
-    if (!product) return;
-    addItem(product);
-    setAddedToCart(true);
-    setTimeout(() => setAddedToCart(false), 2000);
-  };
-
   const handleAddToInquiry = () => {
     setAddedToInquiry(true);
-    setTimeout(() => setAddedToInquiry(false), 2000);
-    // Store inquiry items in localStorage
+    setTimeout(() => setAddedToInquiry(false), 2500);
     try {
       const existing = JSON.parse(localStorage.getItem('brikgoods-inquiry') || '[]');
       if (!existing.includes(id)) {
@@ -54,164 +43,165 @@ export default function ProductDetailPage() {
 
   if (loading) {
     return (
-      <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '5rem 1.5rem', textAlign: 'center', color: '#9ca3af' }}>
-        Loading...
+      <div className="min-h-screen flex items-center justify-center bg-[#FAF9F6]">
+        <p className="luxury-label text-[#a09890]">Loading…</p>
       </div>
     );
   }
 
   if (!product) return null;
 
+  const specs = [
+    { label: 'Item No.', value: product.id },
+    { label: 'Size', value: product.size },
+    { label: 'Weight', value: product.weight },
+    { label: 'Category', value: product.category },
+  ];
+
   return (
-    <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '3rem 1.5rem' }}>
+    <div className="bg-[#FAF9F6] min-h-screen">
       {/* Breadcrumb */}
-      <nav style={{ marginBottom: '2rem', fontSize: '0.875rem', color: '#9ca3af' }}>
-        <Link href="/" style={{ color: '#9ca3af', textDecoration: 'none' }}>Home</Link>
-        <span style={{ margin: '0 0.5rem' }}>/</span>
-        <Link href="/products" style={{ color: '#9ca3af', textDecoration: 'none' }}>Products</Link>
-        <span style={{ margin: '0 0.5rem' }}>/</span>
-        <Link href={`/products?category=${encodeURIComponent(product.category)}`} style={{ color: '#9ca3af', textDecoration: 'none' }}>
-          {product.category}
-        </Link>
-        <span style={{ margin: '0 0.5rem' }}>/</span>
-        <span style={{ color: '#1A1A1A' }}>{product.name}</span>
-      </nav>
-
-      {/* Main content */}
-      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '3rem', alignItems: 'start' }}>
-        {/* Image */}
-        <div style={{ borderRadius: '16px', overflow: 'hidden', border: '1px solid #e5e7eb', backgroundColor: '#f9fafb' }}>
-          <div style={{ position: 'relative', height: '460px' }}>
-            <Image
-              src={product.image}
-              alt={product.name}
-              fill
-              style={{ objectFit: 'cover' }}
-              sizes="(max-width: 768px) 100vw, 50vw"
-              priority
-            />
-          </div>
-        </div>
-
-        {/* Details */}
-        <div>
-          <div style={{ display: 'inline-block', backgroundColor: '#f0fdff', color: '#2E6B73', fontSize: '0.75rem', fontWeight: 700, letterSpacing: '0.06em', textTransform: 'uppercase', padding: '0.25rem 0.75rem', borderRadius: '4px', marginBottom: '1rem' }}>
-            {product.category}
-          </div>
-
-          <h1 style={{ fontSize: '1.875rem', fontWeight: 800, color: '#1A1A1A', marginBottom: '0.75rem', lineHeight: 1.2 }}>
-            {product.name}
-          </h1>
-
-          <p style={{ fontSize: '0.9375rem', color: '#6b7280', marginBottom: '1.5rem', lineHeight: 1.7 }}>
-            {product.description}
-          </p>
-
-          {/* Specs */}
-          <div style={{ backgroundColor: '#f9fafb', borderRadius: '10px', padding: '1.25rem', marginBottom: '1.5rem' }}>
-            <h3 style={{ fontSize: '0.875rem', fontWeight: 700, color: '#1A1A1A', marginBottom: '0.875rem', textTransform: 'uppercase', letterSpacing: '0.05em' }}>
-              Specifications
-            </h3>
-            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '0.75rem' }}>
-              {[
-                { label: 'Item No.', value: product.id },
-                { label: 'Size', value: product.size },
-                { label: 'Weight', value: product.weight },
-                { label: 'Category', value: product.category },
-              ].map((spec) => (
-                <div key={spec.label}>
-                  <p style={{ fontSize: '0.75rem', color: '#9ca3af', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.04em' }}>{spec.label}</p>
-                  <p style={{ fontSize: '0.9375rem', color: '#1A1A1A', fontWeight: 600 }}>{spec.value}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-
-          {/* Price */}
-          <div style={{ marginBottom: '1.5rem', padding: '1rem', border: '1px dashed #d1d5db', borderRadius: '8px', textAlign: 'center' }}>
-            <p style={{ fontSize: '0.875rem', color: '#6b7280', marginBottom: '0.25rem' }}>Pricing</p>
-            <p style={{ fontSize: '1.375rem', fontWeight: 700, color: '#2E6B73' }}>Contact for Price</p>
-            <p style={{ fontSize: '0.8125rem', color: '#9ca3af', marginTop: '0.25rem' }}>
-              Wholesale pricing available for bulk orders
-            </p>
-          </div>
-
-          {/* Action Buttons */}
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
-            <button
-              onClick={handleAddToCart}
-              style={{
-                padding: '0.875rem 1.5rem',
-                backgroundColor: addedToCart ? '#22c55e' : '#1A1A1A',
-                color: 'white',
-                border: 'none',
-                borderRadius: '8px',
-                fontSize: '1rem',
-                fontWeight: 700,
-                cursor: 'pointer',
-                transition: 'background-color 0.2s',
-                letterSpacing: '0.01em',
-              }}
+      <div className="border-b border-[#e8e5de] bg-white">
+        <div className="max-w-7xl mx-auto px-6 lg:px-10 py-4">
+          <nav className="flex items-center gap-2">
+            <Link href="/" className="luxury-label text-[#a09890] hover:text-[#B8963E] transition-colors">Home</Link>
+            <span className="text-[#d8d5ce]">/</span>
+            <Link href="/products" className="luxury-label text-[#a09890] hover:text-[#B8963E] transition-colors">Products</Link>
+            <span className="text-[#d8d5ce]">/</span>
+            <Link
+              href={`/products?category=${encodeURIComponent(product.category)}`}
+              className="luxury-label text-[#a09890] hover:text-[#B8963E] transition-colors"
             >
-              {addedToCart ? '✓ Added to Cart!' : 'Add to Cart'}
-            </button>
-
-            <button
-              onClick={handleAddToInquiry}
-              style={{
-                padding: '0.875rem 1.5rem',
-                backgroundColor: 'transparent',
-                color: addedToInquiry ? '#22c55e' : '#2E6B73',
-                border: `2px solid ${addedToInquiry ? '#22c55e' : '#2E6B73'}`,
-                borderRadius: '8px',
-                fontSize: '1rem',
-                fontWeight: 700,
-                cursor: 'pointer',
-                transition: 'all 0.2s',
-              }}
-            >
-              {addedToInquiry ? '✓ Added to Inquiry!' : 'Add to Wholesale Inquiry'}
-            </button>
-
-            <Link href="/wholesale" style={{
-              display: 'block',
-              textAlign: 'center',
-              padding: '0.625rem',
-              color: '#2E6B73',
-              textDecoration: 'none',
-              fontSize: '0.875rem',
-              fontWeight: 600,
-            }}>
-              Submit Wholesale Inquiry →
+              {product.category}
             </Link>
-          </div>
+            <span className="text-[#d8d5ce]">/</span>
+            <span className="luxury-label text-[#0A0A0A]">{product.id}</span>
+          </nav>
         </div>
       </div>
 
-      {/* Related Products */}
-      {related.length > 0 && (
-        <div style={{ marginTop: '4rem' }}>
-          <h2 style={{ fontSize: '1.5rem', fontWeight: 700, color: '#1A1A1A', marginBottom: '1.5rem' }}>
-            More in {product.category}
-          </h2>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(250px, 1fr))', gap: '1.25rem' }}>
-            {related.map((rel) => (
-              <div key={rel.id} style={{ border: '1px solid #e5e7eb', borderRadius: '10px', overflow: 'hidden', backgroundColor: 'white' }}>
-                <div style={{ position: 'relative', height: '180px', backgroundColor: '#f9fafb' }}>
-                  <Image src={rel.image} alt={rel.name} fill style={{ objectFit: 'cover' }} sizes="25vw" />
+      {/* Main product layout */}
+      <div className="max-w-7xl mx-auto px-6 lg:px-10 py-16">
+        <div className="grid grid-cols-1 lg:grid-cols-[60%_40%] gap-16 items-start">
+
+          {/* LEFT: Large product image */}
+          <div className="bg-white border border-[#e8e5de] overflow-hidden">
+            <div style={{ position: 'relative', paddingBottom: '80%' }}>
+              <Image
+                src={product.image}
+                alt={product.name}
+                fill
+                style={{ objectFit: 'contain', padding: '2.5rem' }}
+                sizes="(max-width: 1024px) 100vw, 60vw"
+                priority
+              />
+            </div>
+          </div>
+
+          {/* RIGHT: Product details */}
+          <div className="lg:pt-4">
+            {/* Category tag */}
+            <span className="luxury-label text-[#2E6B73] block mb-4">
+              {product.category}
+            </span>
+
+            {/* Product name — large serif */}
+            <h1
+              className="luxury-heading text-[#0A0A0A] mb-6"
+              style={{ fontSize: 'clamp(1.75rem, 3vw, 2.5rem)' }}
+            >
+              {product.name}
+            </h1>
+
+            {/* Description */}
+            <p className="text-[#6b6560] leading-relaxed mb-10 text-[1.0625rem]" style={{ fontFamily: 'var(--font-inter)' }}>
+              {product.description}
+            </p>
+
+            {/* Specs as clean labeled rows */}
+            <div className="border-t border-[#e8e5de] mb-8">
+              {specs.map((spec) => (
+                <div key={spec.label} className="flex justify-between py-4 border-b border-[#e8e5de]">
+                  <span className="luxury-label text-[#a09890]">{spec.label}</span>
+                  <span className="text-[#0A0A0A] text-sm font-medium" style={{ fontFamily: 'var(--font-inter)' }}>{spec.value}</span>
                 </div>
-                <div style={{ padding: '1rem' }}>
-                  <p style={{ fontSize: '0.75rem', color: '#9ca3af', marginBottom: '0.25rem' }}>#{rel.id}</p>
-                  <h3 style={{ fontSize: '0.9375rem', fontWeight: 600, color: '#1A1A1A', marginBottom: '0.5rem' }}>{rel.name}</h3>
-                  <Link href={`/products/${rel.id}`} style={{ color: '#2E6B73', fontSize: '0.875rem', fontWeight: 600, textDecoration: 'none' }}>
-                    View Details →
-                  </Link>
-                </div>
-              </div>
-            ))}
+              ))}
+            </div>
+
+            {/* Price — prominent gold */}
+            <div className="mb-8 py-5 border border-[#e8c86e] bg-[#fffbf0] text-center">
+              <p className="luxury-label text-[#a09890] mb-1">Pricing</p>
+              <p className="luxury-heading text-[#B8963E] text-2xl">Contact for Price</p>
+              <p className="text-[#a09890] text-sm mt-1" style={{ fontFamily: 'var(--font-inter)' }}>
+                Wholesale pricing available for bulk orders
+              </p>
+            </div>
+
+            {/* Action buttons */}
+            <div className="flex flex-col gap-3">
+              <button
+                onClick={handleAddToInquiry}
+                className="btn-primary w-full text-center"
+                style={{
+                  background: addedToInquiry ? '#2E6B73' : '#0A0A0A',
+                  borderColor: addedToInquiry ? '#2E6B73' : '#0A0A0A',
+                }}
+              >
+                {addedToInquiry ? '✓ Added to Inquiry List' : 'Add to Wholesale Inquiry'}
+              </button>
+              <Link href="/wholesale" className="btn-outline-gold w-full text-center block">
+                Submit Wholesale Inquiry →
+              </Link>
+            </div>
           </div>
         </div>
-      )}
+
+        {/* ─── RELATED PRODUCTS ──────────────────────────── */}
+        {related.length > 0 && (
+          <div className="mt-24">
+            {/* Section header */}
+            <div className="flex items-center gap-6 mb-10">
+              <div className="h-px flex-1 bg-[#e8e5de]" />
+              <h2 className="luxury-heading text-[#0A0A0A] text-2xl whitespace-nowrap">
+                More in {product.category}
+              </h2>
+              <div className="h-px flex-1 bg-[#e8e5de]" />
+            </div>
+
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+              {related.map((rel) => (
+                <Link
+                  key={rel.id}
+                  href={`/products/${rel.id}`}
+                  className="group bg-white border border-[#e8e5de] hover:border-[#B8963E] transition-colors duration-300 overflow-hidden"
+                >
+                  <div style={{ position: 'relative', paddingBottom: '100%', background: '#FAF9F6' }}>
+                    <Image
+                      src={rel.image}
+                      alt={rel.name}
+                      fill
+                      style={{ objectFit: 'contain', padding: '1rem' }}
+                      sizes="25vw"
+                    />
+                  </div>
+                  <div className="p-4 border-t border-[#f0ede8]">
+                    <p className="luxury-label text-[#a09890] mb-1">#{rel.id}</p>
+                    <h3
+                      className="text-[#0A0A0A] font-medium text-sm leading-snug line-clamp-2 mb-2"
+                      style={{ fontFamily: 'var(--font-inter)' }}
+                    >
+                      {rel.name}
+                    </h3>
+                    <span className="luxury-label text-[#B8963E] group-hover:text-[#9e7e2e] transition-colors">
+                      View →
+                    </span>
+                  </div>
+                </Link>
+              ))}
+            </div>
+          </div>
+        )}
+      </div>
     </div>
   );
 }

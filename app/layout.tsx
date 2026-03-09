@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import { Inter } from 'next/font/google';
+import { Inter, Playfair_Display } from 'next/font/google';
 import './globals.css';
 import { CartProvider } from '@/lib/cart';
 import Navbar from '@/components/Navbar';
@@ -11,9 +11,17 @@ const inter = Inter({
   variable: '--font-inter',
 });
 
+const playfair = Playfair_Display({
+  subsets: ['latin'],
+  display: 'swap',
+  variable: '--font-playfair',
+  weight: ['400', '500', '600', '700'],
+  style: ['normal', 'italic'],
+});
+
 export const metadata: Metadata = {
   title: {
-    default: 'BRik Goods — Organize with Intention',
+    default: 'BRik Goods — Curated for the Modern Home',
     template: '%s | BRik Goods',
   },
   description:
@@ -23,7 +31,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className={inter.variable}>
+    <html lang="en" className={`${inter.variable} ${playfair.variable}`}>
       <body className="flex flex-col min-h-screen">
         <CartProvider>
           <Navbar />

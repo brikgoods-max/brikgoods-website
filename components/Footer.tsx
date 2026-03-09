@@ -6,6 +6,8 @@ const shopLinks = [
   { href: '/products?category=Shoe+Storage', label: 'Shoe Storage' },
   { href: '/products?category=Kitchen+%26+Pantry', label: 'Kitchen & Pantry' },
   { href: '/products?category=Home+Organization', label: 'Home Organization' },
+  { href: '/products?category=Bathroom', label: 'Bathroom' },
+  { href: '/products?category=Clothing+Storage', label: 'Clothing Storage' },
 ];
 
 const companyLinks = [
@@ -16,81 +18,82 @@ const companyLinks = [
 
 export default function Footer() {
   return (
-    <footer className="bg-[#1A1A1A] text-white mt-auto">
-      {/* Teal accent line */}
-      <div className="h-[3px] bg-[#2E6B73]" />
+    <footer className="bg-[#FAF9F6] text-[#0A0A0A] mt-auto" style={{ borderTop: '2px solid #B8963E' }}>
+      <div className="max-w-7xl mx-auto px-6 lg:px-10 pt-16 pb-10">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-14 mb-16">
 
-      <div className="max-w-7xl mx-auto px-6 lg:px-8 pt-16 pb-8">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-14">
-
-          {/* Brand */}
+          {/* Brand story */}
           <div>
             <Image
               src="/images/logo.png"
               alt="BRik Goods"
               width={120}
               height={40}
-              className="h-[38px] w-auto object-contain brightness-0 invert mb-5"
+              className="h-[34px] w-auto object-contain mb-6"
             />
-            <p className="text-gray-400 text-sm leading-relaxed max-w-[240px]">
-              Premium storage and organization products designed for modern living.
+            <p className="text-[#6b6560] text-sm leading-relaxed max-w-[260px] mb-5" style={{ fontFamily: 'var(--font-inter)' }}>
+              We believe every home deserves beautiful, functional storage. Designed for modern living — built to last.
             </p>
-            <p className="text-gray-600 text-xs mt-5 tracking-[0.08em] uppercase">Wholesale inquiries welcome</p>
+            <p className="luxury-label text-[#B8963E]">Wholesale inquiries welcome</p>
           </div>
 
           {/* Navigation */}
           <div>
-            <h3 className="text-[0.625rem] font-bold tracking-[0.15em] uppercase text-[#2E6B73] mb-5">
-              Navigation
+            <h3 className="luxury-label text-[#0A0A0A] mb-6">
+              Shop
             </h3>
-            <div className="space-y-3">
+            <div className="space-y-3.5">
               {shopLinks.map((l) => (
                 <Link
                   key={l.href}
                   href={l.href}
-                  className="block text-gray-400 text-sm hover:text-white transition-colors duration-200"
+                  className="block text-[#6b6560] text-sm hover:text-[#0A0A0A] transition-colors duration-200"
                 >
                   {l.label}
                 </Link>
               ))}
-              {companyLinks.map((l) => (
-                <Link
-                  key={l.href}
-                  href={l.href}
-                  className="block text-gray-400 text-sm hover:text-white transition-colors duration-200"
-                >
-                  {l.label}
-                </Link>
-              ))}
+              <div className="pt-2 border-t border-[#e8e5de]">
+                {companyLinks.map((l) => (
+                  <Link
+                    key={l.href}
+                    href={l.href}
+                    className="block text-[#6b6560] text-sm hover:text-[#0A0A0A] transition-colors duration-200 mt-3.5"
+                  >
+                    {l.label}
+                  </Link>
+                ))}
+              </div>
             </div>
           </div>
 
           {/* Contact */}
           <div>
-            <h3 className="text-[0.625rem] font-bold tracking-[0.15em] uppercase text-[#2E6B73] mb-5">
+            <h3 className="luxury-label text-[#0A0A0A] mb-6">
               Contact
             </h3>
-            <div className="space-y-3">
-              <p className="text-gray-400 text-sm">info@brikgoods.com</p>
-              <p className="text-gray-400 text-sm leading-relaxed">
+            <div className="space-y-4">
+              <p className="text-[#6b6560] text-sm">info@brikgoods.com</p>
+              <p className="text-[#6b6560] text-sm leading-relaxed">
                 For wholesale pricing and bulk orders, submit an inquiry through our wholesale page.
               </p>
               <Link
                 href="/wholesale"
-                className="inline-block mt-2 text-[0.6875rem] font-semibold tracking-[0.1em] uppercase text-[#2E6B73] hover:text-[#3a8a94] transition-colors"
+                className="inline-flex items-center gap-2 luxury-label text-[#B8963E] hover:text-[#9e7e2e] transition-colors mt-2"
               >
-                Wholesale Inquiry →
+                Submit Wholesale Inquiry
+                <span>→</span>
               </Link>
             </div>
           </div>
         </div>
 
-        <div className="border-t border-gray-800 pt-6 flex flex-col sm:flex-row justify-between items-center gap-2">
-          <p className="text-gray-600 text-xs tracking-wide">
+        {/* Bottom bar */}
+        <div className="border-t border-[#e8e5de] pt-7 flex flex-col sm:flex-row justify-between items-center gap-3">
+          <p className="text-[#9e9890] text-xs tracking-wide">
             © {new Date().getFullYear()} BRik Goods. All rights reserved.
           </p>
-          <p className="text-gray-700 text-xs tracking-[0.06em] uppercase">
-            Quality · Design · Value
+          <p className="luxury-label text-[#c8c4bc]" style={{ letterSpacing: '0.18em' }}>
+            Premium · Design · Quality
           </p>
         </div>
       </div>
