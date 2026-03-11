@@ -4,6 +4,7 @@ import './globals.css';
 import { CartProvider } from '@/lib/cart';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
+import AdminLayoutGuard from '@/components/AdminLayoutGuard';
 
 const inter = Inter({
   subsets: ['latin'],
@@ -34,9 +35,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="en" className={`${inter.variable} ${playfair.variable}`}>
       <body className="flex flex-col min-h-screen">
         <CartProvider>
-          <Navbar />
-          <main className="flex-1">{children}</main>
-          <Footer />
+          <AdminLayoutGuard>
+            {children}
+          </AdminLayoutGuard>
         </CartProvider>
       </body>
     </html>
